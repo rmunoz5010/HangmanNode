@@ -1,10 +1,10 @@
 var Letter = require('./letter.js');
 
 function Word(word) {
-  var wordObject = this;
-  this.word = word;
-  this.letters = [];
-  this.wordFound = false;
+  this.wordObject = this,
+  this.word = word,
+  this.letters = [],
+  this.wordFound = false,
 
   this.getLets = function() {
 
@@ -12,7 +12,7 @@ function Word(word) {
       var newLetter = new Letter(wordObject.word[i]);
       this.letters.push(newLetter);
     }
-  };
+  },
 
 
   this.didWeFindTheWord = function() {
@@ -23,7 +23,7 @@ function Word(word) {
       return true;
     }
 
-  };
+  },
 
   this.checkIfLetterFound = function(guessedLetter) {
     var whatToReturn = 0;
@@ -36,7 +36,7 @@ function Word(word) {
     })
 
     return whatToReturn;
-  };
+  },
 
   this.wordRender = function() {
     var display = '';

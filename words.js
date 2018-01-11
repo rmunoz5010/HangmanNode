@@ -1,4 +1,4 @@
 exports.newWord = {
-    wordList:['SUPERMAN','BATMAN','WONDER WOMAN','THE FLASH','AQUAMAN','CYBORG','BATGIRL','ROBIN','NIGHTWING','BLACK CANARY','HAWKGIRL','GREEN ARROW','SUPERGIRL'],
+    wordList:['FRODO','BILBO BAGGINS','GANDOLF','MORDOR','RIDERS OF RONDOR'],
     hangman: ["\n\n\n\n\n\n\n-------------", "\n |\n |\n |\n |\n |\n |\n |\n-------------", "____________\n |         |\n |\n |\n |\n |\n |\n-------------","____________\n |         |\n |         O\n |\n |\n |\n |\n |\n-------------","____________\n |         |\n |         O\n |         |\n |         |\n |\n |\n |\n-------------","____________\n |         |\n |         O\n |         |\n |         |\n |        ---\n |\n |\n-------------", "____________\n |         |\n |         O\n |       __|\n |         |\n |        ---\n |\n |\n-------------", "____________\n |         |\n |         O\n |       __|__\n |         |\n |        ---\n |\n |\n-------------", "____________\n |         |\n |         O\n |       __|__\n |         |\n |        ---\n |        |\n |\n-------------","____________\n |         |\n |         O\n |       __|__\n |         |\n |        ---\n |        | |\n |\n-------------"]
   };

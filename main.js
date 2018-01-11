@@ -15,7 +15,7 @@ var hangman = {
 
   guessedLetters: [],
   display: 0,
-  currentWord: null,
+  currentWord: " ",
   startGame: function() {
     var gameObject = this;
   
@@ -39,7 +39,7 @@ var hangman = {
   newGame: function() {
     if(this.guessesRemaining === 10) {
       console.log("Okay! Here we go!");
-      console.log('*****************');
+      console.log('______________________');
       var randNum = Math.floor(Math.random()*this.wordBank.length);
       // I don't know why this isn't working. The constructor is linked.
       this.currentWord = new Word(this.wordBank[randNum]);
