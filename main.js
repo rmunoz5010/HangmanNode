@@ -41,7 +41,7 @@ var hangman = {
       console.log("Okay! Here we go!");
       console.log('______________________');
       var randNum = Math.floor(Math.random()*this.wordBank.length);
-      // I don't know why this isn't working. The constructor is linked.
+      // I don't know why this isn't working. The constructor is linked and linked
       this.currentWord = new Word(this.wordBank[randNum]);
       this.currentWord.getLets();
       console.log(this.currentWord.wordRender());
@@ -55,7 +55,7 @@ var hangman = {
     this.guessesRemaining = 10;
   },
   keepPromptingUser : function(){
-    var that = this;
+    var myObject = this;
     inquirer.prompt([{
       name: "chosenLtr",
       type: "input",
@@ -70,50 +70,50 @@ var hangman = {
     }]).then(function(ltr) {
       var letterReturned = (ltr.chosenLtr).toUpperCase();
       var guessedAlready = false;
-        for(var i = 0; i<that.guessedLetters.length; i++){
-          if(letterReturned === that.guessedLetters[i]){
+        for(var i = 0; i<myObject.guessedLetters.length; i++){
+          if(letterReturned === myObject.guessedLetters[i]){
             guessedAlready = true;
           }
         }
 
         if(guessedAlready === false){
-          that.guessedLetters.push(letterReturned);
+          myObject.guessedLetters.push(letterReturned);
 
-          var found = that.currentWord.checkIfLetterFound(letterReturned);
+          var found = myObject.currentWord.checkIfLetterFound(letterReturned);
           if(found === 0){
             console.log('Try again');
-            that.guessesRemaining--;
-            that.display++;
-            console.log('Guesses remaining: ' + that.guessesRemaining);
-            console.log(hangManDisplay[(that.display)-1]);
+            myObject.guessesRemaining--;
+            myObject.display++;
+            console.log('Guesses remaining: ' + myObject.guessesRemaining);
+            console.log(hangManDisplay[(myObject.display)-1]);
 
             console.log('\n*******************');
-            console.log(that.currentWord.wordRender());
+            console.log(myObject.currentWord.wordRender());
             console.log('\n*******************');
 
-            console.log("Letters guessed: " + that.guessedLetters);
+            console.log("Letters guessed: " + myObject.guessedLetters);
           } else{
             console.log('Yes! You guessed right!');
-              if(that.currentWord.didWeFindTheWord() === true){
-                console.log(that.currentWord.wordRender());
+              if(myObject.currentWord.didWeFindTheWord() === true){
+                console.log(myObject.currentWord.wordRender());
                 console.log('Congratulations! You won the game!!!');
               } else{
 
-                console.log('Guesses remaining: ' + that.guessesRemaining);
-                console.log(that.currentWord.wordRender());
+                console.log('Guesses remaining: ' + myObject.guessesRemaining);
+                console.log(myObject.currentWord.wordRender());
                 console.log('\n*******************');
-                console.log("Letters guessed: " + that.guessedLetters);
+                console.log("Letters guessed: " + myObject.guessedLetters);
               }
           }
-          if(that.guessesRemaining > 0 && that.currentWord.wordFound === false) {
-            that.keepPromptingUser();
-          }else if(that.guessesRemaining === 0){
+          if(myObject.guessesRemaining > 0 && myObject.currentWord.wordFound === false) {
+            myObject.keepPromptingUser();
+          }else if(myObject.guessesRemaining === 0){
             console.log('Game over!');
-            console.log('The word you were guessing was: ' + that.currentWord.word);
+            console.log('The word you were guessing was: ' + myObject.currentWord.word);
           }
         } else{
             console.log("You've guessed that letter already. Try again.")
-            that.keepPromptingUser();
+            myObject.keepPromptingUser();
           }
     });
   }
