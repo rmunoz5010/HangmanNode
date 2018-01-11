@@ -4,7 +4,7 @@ var Game = require('./game.js');
 var inquirer = require('inquirer');
 var isLetter = require('is-letter');
 
-var hangManDisplay = Word.newWord.hangman;
+
 
 require('events').EventEmitter.prototype._maxListeners = 100;
 
@@ -41,8 +41,7 @@ var hangman = {
       console.log("Okay! Here we go!");
       console.log('______________________');
       var randNum = Math.floor(Math.random()*this.wordBank.length);
-      // I don't know why this isn't working. The constructor is linked and linked
-      this.currentWord = new Word(this.wordBank[randNum]);
+      this.currentWord = new Game(this.wordBank[randNum]);
       this.currentWord.getLets();
       console.log(this.currentWord.wordRender());
       this.keepPromptingUser();
@@ -83,9 +82,7 @@ var hangman = {
           if(found === 0){
             console.log('Try again');
             myObject.guessesRemaining--;
-            myObject.display++;
             console.log('Guesses remaining: ' + myObject.guessesRemaining);
-            console.log(hangManDisplay[(myObject.display)-1]);
 
             console.log('\n*******************');
             console.log(myObject.currentWord.wordRender());
