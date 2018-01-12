@@ -9,6 +9,8 @@ To use HangmanNode, follow these steps!
 
 
 2. Once you cloned your repository, make sure to use NPM install on the folder directory.
+![npminstall](https://user-images.githubusercontent.com/32658493/34877975-444e6d9e-f776-11e7-8c63-c46a3abd6ce5.gif)
+
 
 3. Then just use node main.js and let the fun begin!
 
